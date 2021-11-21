@@ -60,6 +60,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -75,6 +76,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -84,7 +86,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\CleanCustomBuildSteps.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Commands\EraseEmptyFolderCommand.cpp" />
+    <ClCompile Include="src\Commands\EraseFileCommand.cpp" />
+    <ClCompile Include="src\Commands\EraseFilesByTypeCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Commands\EraseEmptyFolderCommand.h" />
+    <ClInclude Include="src\Commands\EraseFileCommand.h" />
+    <ClInclude Include="src\Commands\EraseFilesByTypeCommand.h" />
+    <ClInclude Include="src\Commands\ICommand.h" />
+    <ClInclude Include="src\Global.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
